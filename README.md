@@ -4,6 +4,13 @@ Designed with PHP and jQuery, the Dungeon Crawl Classics Cleric Character Genera
 __________________________________
 
 
+
+
+Update 1.01: 2020-12-25
+
+Updated dccCleric.php and cleric.css.  New character sheet (cleric.png) added.
+
+
 Initial Commit: 2020-12-24
 
 The initial commit of the Dungeon Crawl Classics Cleric Character Generator Version 3.
