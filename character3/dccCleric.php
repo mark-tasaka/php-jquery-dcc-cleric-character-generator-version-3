@@ -255,15 +255,11 @@
 
        <span id="deity">
            <?php
-           echo "Diety: " . $deityName;
+           echo $deityName . " (" . $deityDescription . ")";
            ?>
        </span>
 
-       <span id="deityDescription">
-           <?php
-           echo $deityDescription;
-           ?>
-       </span>
+
 
        
        <span id="weaponsAllowed">
