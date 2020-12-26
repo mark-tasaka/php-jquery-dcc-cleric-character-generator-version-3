@@ -29,23 +29,31 @@ function getDeity($input)
     
 }
 
+function getRandomDiety()
+{
+    $dietyNumber = rand(0, 18);
+
+    return $dietyNumber;
+
+}
+
 function getDeityWeapons($input)
 {
     $weapons = "";
 
     if($input >=0 && $input <=7)
     {
-        $weapons = "Club, mace, sling, staff & warhammer";
+        $weapons = "Club, mace, sling, staff & warhammer.";
     }
 
     if($input >=8 && $input <=11)
     {
-        $weapons = "Dagger, mace, sling, staff & sword (any)";
+        $weapons = "Dagger, mace, sling, staff & sword (any).";
     }
 
     if($input >11)
     {
-        $weapons = "Axe (any), bow (any), dagger, dark & flail";
+        $weapons = "Axe (any), bow (any), dagger, dark & flail.";
     }
 
     return $weapons;

@@ -45,6 +45,7 @@
     include 'php/abilityScoreGen.php';
     include 'php/randomName.php';
     include 'php/clericAlignment.php';
+    include 'php/xp.php';
     
 
         if(isset($_POST["theCharacterName"]))
@@ -52,6 +53,16 @@
             $characterName = $_POST["theCharacterName"];
     
         }
+
+        
+        if(isset($_POST["thePlayerName"]))
+        {
+            $playerName = $_POST["thePlayerName"];
+    
+        }
+        
+
+
         
         if(isset($_POST["theGender"]))
         {
@@ -63,11 +74,23 @@
         {
             $characterName = getRandomName($gender) . " " . getSurname();
         } 
-        
+
+    //For Random Select Diety
+    if(isset($_POST['thecheckBoxRandomDiety']) && $_POST['thecheckBoxRandomDiety'] == 1) 
+    {
+        $deity = rand (0, 18);
+       /* $deity = getRandomDiety();*/
+
+    }
+    else
+    {
         if(isset($_POST["theDeity"]))
         {
             $deity = $_POST["theDeity"];
         }
+
+    }
+
 
         $deityName = getDeity($deity)[0];
         $deityDescription = getDeity($deity)[1];
@@ -84,6 +107,8 @@
             $level = $_POST["theLevel"];
         
         } 
+
+        $xpNextLevel = getXPNextLevel ($level);
         
         if(isset($_POST["theAbilityScore"]))
         {
@@ -180,6 +205,15 @@
         $weaponDamage = array();
     
     
+
+    //For Random Select weapon
+    if(isset($_POST['thecheckBoxRandomWeaponsV3']) && $_POST['thecheckBoxRandomWeaponsV3'] == 1) 
+    {
+        $weaponArray = getRandomWeapons($alignment);
+
+    }
+    else
+    {
         if(isset($_POST["theWeapons"]))
         {
             foreach($_POST["theWeapons"] as $weapon)
@@ -187,6 +221,8 @@
                 array_push($weaponArray, $weapon);
             }
         }
+    }
+
     
     foreach($weaponArray as $select)
     {
@@ -255,25 +291,11 @@
 
        <span id="deity">
            <?php
-           echo $deityName . " (" . $deityDescription . ")";
+           echo $deityName . " (" . $deityDescription . ")<br/><br/> Weapons (holy): " . $weaponsAllowed . "<br/><br/> Unholy Creatures: " . $unholy;
            ?>
        </span>
 
 
-
-       
-       <span id="weaponsAllowed">
-           <?php
-           echo "Weapons (holy): " . $weaponsAllowed . ",";
-           ?>
-       </span>
-
-       
-       <span id="unholy">
-           <?php
-           echo "Unholy Creatures: " . $unholy;
-           ?>
-       </span>
 
        
        
@@ -299,12 +321,29 @@
                 echo $level;
            ?>
         </span>
+
+        
+        
+       <span id="xpNextLevel">
+           <?php
+                echo $xpNextLevel;
+           ?>
+        </span>
+
+       
        
 
        
        <span id="characterName">
            <?php
                 echo $characterName;
+           ?>
+        </span>
+
+        
+       <span id="playerName">
+           <?php
+                echo $playerName;
            ?>
         </span>
        
@@ -743,7 +782,7 @@
       $("#rangeDamage").html(addModifierSign(data.rangeDamage));
 
       
-      $("#baseAC").html("Base AC: " + data.acBase);
+      $("#baseAC").html("(" + data.acBase + ")");
       $("#trainedWeapon").html("Trained Weapon: " + data.trainedWeapon);
       $("#tradeGoods").html("Trade Goods: " + data.tradeGoods);
       
