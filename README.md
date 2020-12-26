@@ -6,6 +6,11 @@ __________________________________
 
 
 
+Update 1.02: 2020-12-22
+
+Updates dccCleric.php. clericAlignment.php, weapons.php and cleric.css.  File xp.php added.  New character sheet (cleric.png) added.
+
+
 Update 1.01: 2020-12-25
 
 Updated dccCleric.php and cleric.css.  New character sheet (cleric.png) added.
