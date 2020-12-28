@@ -3,7 +3,23 @@ Designed with PHP and jQuery, the Dungeon Crawl Classics Cleric Character Genera
 
 __________________________________
 
+Live versions of the Dungeon Crawl Classics (DCC) Cleric Character Generator Version 3 are found at:
 
+Dwarves, Warriors and Mighty Deeds: A Dungeon Crawl Classics Fan Site:
+
+https://www.oldschooladventures.org/dcc/cleric/
+
+Fantastic Adventures and the Disgruntled Gong Farmer: A DCC Adventure Module:
+
+https://www.tasaka-games.com/dcc/more/classes/cleric/
+
+________________________
+
+
+
+Update 1.03: 2020-12-28
+
+The launch page for the DCC Cleric Character Generator Version 3 has been added.
 
 
 Update 1.02: 2020-12-26
