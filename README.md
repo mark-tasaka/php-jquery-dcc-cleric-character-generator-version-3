@@ -17,6 +17,11 @@ ________________________
 
 
 
+Update 1.04: 2021-09-13
+
+Corrected typo in data.
+
+
 Update 1.03: 2020-12-28
 
 The launch page for the DCC Cleric Character Generator Version 3 has been added.
